@@ -1,0 +1,15 @@
+[
+  { "name": "JavaScript", "icon": "js" },
+  { "name": "TypeScript", "icon": "ts" },
+  { "name": "HTML", "icon": "html" },
+  { "name": "CSS", "icon": "css" },
+  { "name": "React", "icon": "react" },
+  { "name": "Next.js", "icon": "nextjs" },
+  { "name": "Node.js", "icon": "nodejs" },
+  { "name": "Express", "icon": "express" },
+  { "name": "MySQL", "icon": "mysql" },
+  { "name": "PostgreSQL", "icon": "postgresql" },
+  { "name": "Supabase", "icon": "supabase" },
+  { "name": "Git", "icon": "git" },
+  { "name": "Figma", "icon": "figma" }
+]
