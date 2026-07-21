@@ -1,0 +1,57 @@
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: .9rem;
+    border-bottom: 1px solid rgba(76, 76, 101, 0.40);
+}
+
+.nav::before {
+    content: "";    
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(11, 15, 25, 0.70);
+    z-index: 1;
+}
+
+.logo {
+    font-size: 1.125rem;
+    z-index: -1
+}
+
+.langBtn {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.menutoggle,
+.langBtn {
+    background-color: transparent;
+    border: none;
+    color: #E2E3E7;
+    z-index: -1
+}
+
+.navLinks {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-card);
+  text-align: center;
+}
+
+.navLink {
+    margin-block: 1.6rem;
+    font-weight: 400;
+    font-size: .9rem;
+}
+

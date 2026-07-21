@@ -1,0 +1,41 @@
+.heroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: 80vh;
+    padding: .9rem;
+}
+
+.name {
+    font-size: 2.25rem;
+    flex-wrap: wrap;
+    text-align: center;
+    letter-spacing: -2%;
+}
+
+.title {
+    color: #9394A5;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.aboutLink {
+    background-color: #4830E6;
+    color: #fff;
+    padding: 12px 32px;
+    border-radius: 4px;
+    
+}
+
+.heroSection::before {
+    content: "";    
+    position: absolute; 
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: rgba(11, 15, 25, 0.85);
+    z-index: -1;
+}
