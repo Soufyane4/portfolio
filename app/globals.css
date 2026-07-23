@@ -36,6 +36,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  opacity: .7;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -46,3 +50,6 @@ button {
   font-family: inherit;
 }
 
+[id] {
+    scroll-margin-top: 70px;
+}

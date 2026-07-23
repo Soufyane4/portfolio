@@ -1,0 +1,20 @@
+.aboutSection {
+    padding: 0 .9rem 4rem;
+}
+
+.aboutHeading {
+    font-size: 1.5rem;
+    margin-bottom: 26px;
+    text-align: center;
+}
+
+.aboutText {
+    color: var(--text-secondary);
+    font-size: .85rem;
+    line-height: 1.7;
+    margin-bottom: .7rem;
+}
+
+.aboutLink {
+    color: var(--accent);
+}
