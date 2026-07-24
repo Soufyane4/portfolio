@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo_Black, Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav"
+import Footer from "@/components/Footer"
 
 
 const archivoBlack = Archivo_Black({
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body>
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );

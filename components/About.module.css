@@ -1,5 +1,7 @@
 .aboutSection {
     padding: 0 .9rem 4rem;
+    max-width: 550px;
+    margin: 0 auto;
 }
 
 .aboutHeading {
