@@ -28,7 +28,8 @@
     color: var(--accent);
     font-size: 1.1rem;
     font-weight: 500;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    width: fit-content;
 }
 
 .socialsContainer {
@@ -40,13 +41,13 @@
 .socials {
     color: var(--text-secondary);
     font-weight: 700;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
 }
 
 .footerLogo {
     font-size: 1.125rem;
     color: var(--text-secondary);
-    margin-bottom: 47px;
+    margin-bottom: 37px;
     align-self: flex-end;
 }
 

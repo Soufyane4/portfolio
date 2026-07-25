@@ -10,17 +10,16 @@ export default function Projects() {
             <div className={styles.projectCard} key={project.id}>
                 <Image className={styles.projectImage} src={project.screenshot[0]} alt={`A screenshot of ${project.name} app`} width={260} height={160} unoptimized/>
                 <div className={styles.projectDetails}>
-                    <h5 className={styles.projectName}>{project.name}</h5>
+                    <h3 className={styles.projectName}>{project.name}</h3>
                     <p className={styles.projectDescription}>{project.description}</p>
                     <Link className={styles.projectLink} href={`projects/${project.id}`}>{"VIEW PROJECT >"}</Link>
                 </div>
-                
             </div>
         )
     })
     return (
         <section className={styles.projectsSection} id="projects">
-            <h5 className={styles.projectsHeading}>What I've Done</h5>
+            <h2 className={styles.projectsHeading}>What I've Done</h2>
             <span className={styles.projectsSubheading}>(more coming soon)</span>
             <div className={styles.projectsContainer}>
                 {projectsElements}

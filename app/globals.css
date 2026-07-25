@@ -51,5 +51,15 @@ button {
 }
 
 [id] {
-    scroll-margin-top: 70px;
+  scroll-margin-top: 70px;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }

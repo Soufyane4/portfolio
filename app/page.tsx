@@ -6,13 +6,13 @@ import styles from "./page.module.css"
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Header />
       <main className={styles.main}>
         <About />
         <Skills />
         <Projects />
       </main>
-    </>
+    </div>
   );
 }

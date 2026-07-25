@@ -1,0 +1,133 @@
+.main {
+  padding: 100px .9rem;
+}
+
+.summarySection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.projectName,
+.projectHeading {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+.projectSummay,
+.projectPurpose,
+.projectSpotlight,
+.projectLessons {
+   font-size: .85rem;
+    color: var(--text-secondary);
+    line-height: 1.7; 
+}
+
+.projectSummay {
+    margin-bottom: 1.1rem;
+}
+
+.projectLinksContainer {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 31px;
+}
+
+.projectLink {
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--accent);
+}
+
+.techStack {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.tech {
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background-color: var(--accent-20);
+    padding: 5px 8px;
+    border-radius: 9999px;
+}
+
+.projectImage {
+    align-self: center;
+    width: 100%;
+    max-width: 400px;
+    height: fit-content;
+    border-radius: 8px;
+    margin-bottom: 50px;
+}
+
+.purposeSection,
+.spotlightSection,
+.lessonsSection {
+    margin-bottom: 30px;
+}
+
+.projectSpotlight {
+    background-color: var(--bg-card);
+    border-left: 5px solid var(--accent);
+    padding: 5px 10px;
+}
+
+
+
+.otherProjectCard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 30px;
+    border: 1px solid var(--accent-30);
+    border-radius: 8px;
+}
+
+.otherProjectDetails {
+    display: flex;
+    flex-direction: column;
+    padding: 0 .5rem 1.5rem;
+    gap: 13px;
+}
+
+.otherProjectImage {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.otherProjectName {
+    font-size: 1.5rem;
+}
+
+.otherProjectDescription {
+    font-size: .85rem;
+    color: var(--text-secondary);
+}
+
+.otherProjectLink {
+    font-size: .85rem;
+    color: var(--accent);
+    position: relative;
+    width: fit-content
+}
+
+.otherProjectLink::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.otherProjectLink:hover::after {
+    width: 100%;
+}

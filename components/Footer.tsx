@@ -8,7 +8,7 @@ export default function Footer() {
         <section className={styles.footerSection} id="contact">
             <div className={styles.contactBar}>
                 <div className={styles.emailContainer}>
-                <h6 className={styles.footerHeading}>Let's Build Something Together!</h6>
+                <h2 className={styles.footerHeading}>Let's Build Something Together!</h2>
                 <p className={styles.contactText}>Feel free to  get in touch whether you're 
                 looking for a developer, have a question, or just want to connect.</p>
                 <a className={styles.email} href="mailto:soufianeoubamouh@gmail.com">soufianeoubamouh@gmail.com</a>
@@ -18,7 +18,7 @@ export default function Footer() {
                 <a className={styles.socials} href="https://github.com/Soufyane4" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             </div>
             </div>
-            <h6 className={styles.footerLogo}>{"< SOUF"}<br />{"YANE />"}</h6>
+            <h3 className={styles.footerLogo}>{"< SOUF"}<br />{"YANE />"}</h3>
             <p className={styles.copyrightLine}>© {currentYear} Soufyane Oubmaouh</p>
         </section>
     );

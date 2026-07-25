@@ -4,7 +4,7 @@ import styles from "./About.module.css";
 export default function About() {
   return (
     <section className={styles.aboutSection} id="about"> 
-      <h3 className={styles.aboutHeading}>A Little Bit About Me</h3>
+      <h2 className={styles.aboutHeading}>A Little Bit About Me</h2>
       <p className={styles.aboutText}>
         Hi there! My name is Soufyane, a Full Stack Web Developer from Rabat,
         Morocco.</p>
