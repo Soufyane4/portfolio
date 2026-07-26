@@ -30,12 +30,18 @@
 }
 
 .navLinks {
-  position: fixed;
-  top: 70px;
-  left: 0;
-  width: 100%;
-  background-color: var(--bg-card);
-  text-align: center;
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-card);
+    text-align: center;
+}
+
+.navLinksOpen {
+    display: flex;
+    flex-direction: column;
 }
 
 .navLink {
@@ -44,3 +50,30 @@
     font-size: .9rem;
 }
 
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+    .menutoggle {
+        display: none;
+    }
+
+    .langBtn {
+        order: 1;
+    }
+
+    .navLinks {
+        display: flex;
+        position: relative;
+        top: 0;
+        width: fit-content;
+        gap: 30px;
+        background-color: transparent;
+    }
+
+    .navLink {
+        list-style: none;
+    }
+
+}

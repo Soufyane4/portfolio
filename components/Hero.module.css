@@ -19,6 +19,10 @@
     letter-spacing: -2%;
 }
 
+.brace {
+    display: none;
+}
+
 .title {
     color: #9394A5;
     text-align: center;
@@ -33,3 +37,10 @@
     
 }
 
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+    .brace {
+        display: inline;
+    }
+}

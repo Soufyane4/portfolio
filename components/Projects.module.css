@@ -76,3 +76,24 @@
 .projectLink:hover::after {
     width: 100%;
 }
+
+
+/* MEADIA QUERIES */
+
+@media (min-width: 768px) {
+    .projectsContainer {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .projectCard {
+        width: 313px;
+        height: 326px;
+    }
+
+    .projectDetails {
+        height: 100%;
+        justify-content: space-between
+    }
+
+}
