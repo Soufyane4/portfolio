@@ -5,7 +5,8 @@ export default function About() {
   return (
     <section className={styles.aboutSection} id="about"> 
       <h2 className={styles.aboutHeading}>A Little Bit About Me</h2>
-      <p className={styles.aboutText}>
+      <div className={styles.aboutTextContainer}>
+        <p className={styles.aboutText}>
         Hi there! My name is Soufyane, a Full Stack Web Developer from Rabat,
         Morocco.</p>
         <p className={styles.aboutText}>I used to study physical and chemical sciences at <Link className={styles.aboutLink} href="https://www.um5.ac.ma/um5/">Université Mohammed V (UM5)</Link>,
@@ -20,6 +21,7 @@ export default function About() {
         that.</p>
         <p className={styles.aboutText}>Outside of coding I enjoy watching movies, and lately I've been getting
         into fishing.</p>
+      </div>
     </section>
   );
 }

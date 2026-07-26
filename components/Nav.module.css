@@ -55,25 +55,46 @@
 /* MEDIA QUERIES */
 
 @media (min-width: 768px) {
+
+    .nav {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        align-content: center;
+    }
+
+    .logo {
+        order: 1;
+    }
+
     .menutoggle {
         display: none;
     }
 
     .langBtn {
-        order: 1;
+        justify-self: end;
+        order: 3;
     }
 
     .navLinks {
+        justify-self: center;
         display: flex;
         position: relative;
         top: 0;
         width: fit-content;
         gap: 30px;
         background-color: transparent;
+        order: 2;
     }
 
     .navLink {
         list-style: none;
     }
 
+}
+
+@media (min-width: 1024px) {
+    .nav {
+        padding-inline: 2.2rem;
+    }
 }

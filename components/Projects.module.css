@@ -97,3 +97,11 @@
     }
 
 }
+
+@media (min-width: 1024px) {
+    .projectsContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}

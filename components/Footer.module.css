@@ -57,3 +57,14 @@
     align-self: center;
     bottom: 0;
 }
+
+@media (min-width:1024px) {
+    .contactBar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .socialsContainer {
+        align-self: flex-start;
+    }
+}

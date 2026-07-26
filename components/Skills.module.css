@@ -32,3 +32,15 @@
     font-size: .85rem;
     color: var(--text-secondary);
 }
+
+/* MEADIA QUERIES */
+
+@media (min-width: 1024px) {
+    
+    .skillsContainer {
+        max-width: 660px;
+        gap: 70px;
+    }
+
+    
+}

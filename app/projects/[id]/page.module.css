@@ -18,7 +18,7 @@
 .projectPurpose,
 .projectSpotlight,
 .projectLessons {
-   font-size: .85rem;
+    font-size: .85rem;
     color: var(--text-secondary);
     line-height: 1.7; 
 }
@@ -58,7 +58,7 @@
 .projectImage {
     align-self: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
     height: fit-content;
     border-radius: 8px;
     margin-bottom: 50px;
@@ -98,6 +98,7 @@
 
 .otherProjectImage {
     width: 100%;
+    height: auto;
     border-radius: 8px 8px 0 0;
 }
 
@@ -130,4 +131,43 @@
 
 .otherProjectLink:hover::after {
     width: 100%;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+    .summarySection ,
+    .purposeSection ,
+    .spotlightSection ,
+    .lessonsSection ,
+    .otherProjectsSection {
+        max-width: 650px;
+        margin: 0 auto 30px;
+    }
+
+    .projectImage {
+        max-width: 650px;
+        height: auto;
+    }
+
+    
+}
+
+@media (min-width: 1024px) {
+    .summarySection ,
+    .purposeSection ,
+    .spotlightSection ,
+    .lessonsSection ,
+    .otherProjectsSection {
+        max-width: 750px;
+        margin: 0 auto 30px;
+    }
+
+    .projectImage {
+        max-width: 750px;
+        height: auto;
+    }
+
+    
 }
