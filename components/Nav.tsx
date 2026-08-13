@@ -4,6 +4,7 @@ import Link from "next/link"
 import { TbMenuDeep } from "react-icons/tb"
 import { useState, useEffect, useRef } from "react"
 import styles from "./Nav.module.css"
+import gsap from 'gsap'
 
 
 export default function Nav() {   
@@ -11,6 +12,7 @@ export default function Nav() {
     const [menuOpen, setMenuOpen] = useState(false)
     const [activeSection, setActiveSection] = useState<string | null>(null)
     const isClicking = useRef(false)
+    const logoRef = useRef<HTMLHeadingElement>(null)
 
     useEffect(()=> {
         console.log('useEffect ran')
@@ -49,10 +51,38 @@ export default function Nav() {
         }
     }
 
+    useEffect(() => {
+    if (!logoRef.current) return
+    const spans = logoRef.current.querySelectorAll('span')
+
+    const tl = gsap.timeline({ delay: 3.8 })
+
+    const colors = ['#4830e6', 'inherit']
+
+    colors.forEach((color) => {
+        tl.to(spans, {
+        color,
+        duration: 0.4,
+        stagger: { each: 0.03 },
+        ease: 'power2.inOut', 
+        })
+    })
+    }, [])
+
     return(
         <nav className={styles.nav}>
             <button className={styles.langBtn}>FR</button>
-            <h1 className={styles.logo}><Link href="/">{"< SOUF"}<br />{"YANE />"}</Link></h1>
+            <h1 ref={logoRef} className={styles.logo}>
+                <Link href="/">
+                    {"< SOUF".split("").map((char, i) => (
+                    <span key={i}>{char === " " ? "\u00A0" : char}</span>
+                    ))}
+                    <br />
+                    {"YANE />".split("").map((char, i) => (
+                    <span key={i + 10}>{char === " " ? "\u00A0" : char}</span>
+                    ))}
+                </Link>
+            </h1>
             <button className={styles.menutoggle} onClick={toggleMenu}><TbMenuDeep size={44}/></button>
 
             <ul className={`${styles.navLinks} ${menuOpen ? styles.navLinksOpen : ""}`}>

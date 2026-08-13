@@ -14,13 +14,14 @@
 
 .name {
     font-size: 2.25rem;
-    flex-wrap: wrap;
     text-align: center;
     letter-spacing: -2%;
+    margin: 0;
 }
 
 .brace {
-    display: none;
+  pointer-events: none;
+  color: var(--accent);
 }
 
 .title {
@@ -43,10 +44,3 @@
     opacity: 1;
 }
 
-/* MEDIA QUERIES */
-
-@media (min-width: 768px) {
-    .brace {
-        display: inline;
-    }
-}

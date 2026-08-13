@@ -1,17 +1,73 @@
+"use client"
+
 import Link from "next/link"
 import styles from "./Hero.module.css"
-
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
 
 export default function Hero() {
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  const subtitleRef = useRef<HTMLParagraphElement>(null)
+  const buttonRef = useRef<HTMLAnchorElement>(null)
+  const openBraceRef = useRef<HTMLSpanElement>(null)
+  const closeBraceRef = useRef<HTMLSpanElement>(null)
+  const textRef = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    const fullText = " HI, I'M SOUFYANE "
+    const el = textRef.current
+    if (!el) return
+
+    el.textContent = ''
+
+    const tl = gsap.timeline()
+
+    tl.to({}, {
+      duration: fullText.length * 0.13,
+      ease: 'none',
+      onUpdate() {
+        const charIndex = Math.floor(this.progress() * fullText.length)
+        el.textContent = fullText.slice(0, charIndex)
+      },
+    })
+
+    .to(
+      [openBraceRef.current, closeBraceRef.current],
+      {
+        opacity: 0,
+        duration: 0.3,
+        ease: 'power1.out',
+        onComplete: () => {
+          if (openBraceRef.current) openBraceRef.current.style.display = 'none'
+          if (closeBraceRef.current) closeBraceRef.current.style.display = 'none'
+        },
+      },
+      '+=0.3'
+    )
+
+    .from(subtitleRef.current, {
+      opacity: 0,
+      y: 20,
+      duration: 0.6,
+      ease: 'power3.out',
+    }, '-=0.1')
+    .from(buttonRef.current, {
+      opacity: 0,
+      y: 15,
+      duration: 0.5,
+      ease: 'power3.out',
+    }, '-=0.3')
+  }, [])
+
   return (
     <section className={styles.heroSection}>
-        <h2 className={styles.name}>
-          <span className={styles.brace}>{"{ "}</span>
-            HI, I'M SOUFYANE
-          <span className={styles.brace}>{"  }"}</span>
+        <h2 ref={headingRef} className={styles.name}>
+          <span ref={openBraceRef} className={styles.brace}>{`{`}</span>
+          <span ref={textRef} className={styles.heroText}></span>
+          <span ref={closeBraceRef} className={styles.brace}>{`}`}</span>
         </h2>
-        <p className={styles.title}>Full Stack Developer</p>
-        <Link href="/#about" className={styles.aboutLink}>SEE MORE</Link>
+        <p ref={subtitleRef} className={styles.title}>Full Stack Developer</p>
+        <Link ref={buttonRef} href="/#about" className={styles.aboutLink}>SEE MORE</Link>
     </section>
   );
 }
