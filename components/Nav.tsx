@@ -26,7 +26,7 @@ export default function Nav() {
                 }
             })
             
-        }, { threshold: 0.1, rootMargin: '-70px 0px 0px 0px' })
+        }, { threshold: 0, rootMargin: '-45% 0px -45% 0px' })
 
         sections.forEach(section => observer.observe(section))
         return () => {
