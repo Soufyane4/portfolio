@@ -32,8 +32,8 @@ export default async function ProjectPage({ params }: { params: { id: string } }
             <h2 className={styles.projectName}>{project?.name}</h2>
             <p className={styles.projectSummay}>{project?.summary}</p>
             <div className={styles.projectLinksContainer}>
-                <a className={styles.projectLink} href={project?.liveDemo} target="_blank" rel="noopener noreferrer">Live Demo ↗</a>
-                <a className={styles.projectLink} href={project?.github} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a className={styles.projectLink} href={project?.liveDemo} target="_blank" rel="noopener noreferrer">Live Demo <span className={styles.arrow}>↗</span></a>
+                <a className={styles.projectLink} href={project?.github} target="_blank" rel="noopener noreferrer">GitHub <span className={styles.arrow}>↗</span></a>
             </div>
             <div className={styles.techStack}>{techStack}</div>
             <Image className={styles.projectImage} src={project.screenshot[1]} alt={`A screenshot of ${project?.name} app`} width={260} height={160} unoptimized/>

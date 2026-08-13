@@ -45,12 +45,14 @@
 }
 
 .navLink {
-    margin-block: 1.6rem;
+    padding-block: 1.4rem;
     font-weight: 400;
     font-size: .9rem;
 }
 
-
+.activeLink {
+    background-color: var(--accent-20);
+}
 
 /* MEDIA QUERIES */
 
@@ -89,6 +91,8 @@
 
     .navLink {
         list-style: none;
+        padding: 5px 10px;
+        border-radius: 100px;
     }
 
 }

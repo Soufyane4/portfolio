@@ -39,6 +39,15 @@
     color: var(--accent);
 }
 
+.arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+a:hover .arrow {
+    transform: translate(3px, -3px);
+}
+
 .techStack {
     display: flex;
     gap: 10px;

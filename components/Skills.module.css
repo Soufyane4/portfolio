@@ -26,6 +26,11 @@
     align-items: center;
     gap: 10px;
     width: 70px;
+    transition: transform 0.2s ease;
+}
+
+.skill:hover {
+    transform: scale(1.15);
 }
 
 .skillName {

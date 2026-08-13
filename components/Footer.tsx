@@ -14,8 +14,8 @@ export default function Footer() {
                 <a className={styles.email} href="mailto:soufianeoubamouh@gmail.com">soufianeoubamouh@gmail.com</a>
             </div>
             <div className={styles.socialsContainer}>
-                <a className={styles.socials} href="https://www.linkedin.com/in/soufyane-oubamouh" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-                <a className={styles.socials} href="https://github.com/Soufyane4" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a className={styles.socials} href="https://www.linkedin.com/in/soufyane-oubamouh" target="_blank" rel="noopener noreferrer">LinkedIn <span className={styles.arrow}>↗</span></a>
+                <a className={styles.socials} href="https://github.com/Soufyane4" target="_blank" rel="noopener noreferrer">GitHub <span className={styles.arrow}>↗</span></a>
             </div>
             </div>
             <h3 className={styles.footerLogo}>{"< SOUF"}<br />{"YANE />"}</h3>
