@@ -96,6 +96,12 @@ a:hover .arrow {
     margin-bottom: 30px;
     border: 1px solid var(--accent-30);
     border-radius: 8px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.otherProjectCard:hover {
+    transform: scale(1.02);
+    background-color: var(--bg-card);
 }
 
 .otherProjectDetails {

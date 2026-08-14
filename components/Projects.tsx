@@ -2,6 +2,7 @@ import styles from "./Projects.module.css"
 import projects from "@/data/projects.json"
 import Image from "next/image"
 import Link from "next/link"
+import RevealOnScroll from '@/components/RevealOnScroll'
 
 export default function Projects() {
 
@@ -18,12 +19,15 @@ export default function Projects() {
         )
     })
     return (
-        <section className={styles.projectsSection} id="projects">
-            <h2 className={styles.projectsHeading}>What I've Done</h2>
-            <span className={styles.projectsSubheading}>(more coming soon)</span>
-            <div className={styles.projectsContainer}>
-                {projectsElements}
-            </div>
-        </section>
+        <RevealOnScroll>
+            <section className={styles.projectsSection} id="projects">
+                <h2 className={styles.projectsHeading}>What I've Done</h2>
+                <span className={styles.projectsSubheading}>(more coming soon)</span>
+                <div className={styles.projectsContainer}>
+                    {projectsElements}
+                </div>
+            </section>
+        </RevealOnScroll>
+        
     );
 }

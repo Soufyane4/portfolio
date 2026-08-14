@@ -58,6 +58,7 @@ a:hover .arrow {
     color: var(--text-secondary);
     margin-bottom: 37px;
     align-self: flex-end;
+    cursor: default;
 }
 
 .copyrightLine {

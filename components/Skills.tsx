@@ -1,6 +1,7 @@
 import styles from "./Skills.module.css"
 import skills from "@/data/skills.json"
 import Image from "next/image"
+import RevealOnScroll from '@/components/RevealOnScroll'
 
 export default function Skills() {
 
@@ -13,11 +14,14 @@ export default function Skills() {
         )
     })
     return (
-        <section className={styles.skillsSection} id="skills">
-            <h2 className={styles.skillsHeading}>Some technologies I've worked with:</h2>
-            <div className={styles.skillsContainer}>
-                {skillsElements}
-            </div>
-        </section>
+        <RevealOnScroll>
+            <section className={styles.skillsSection} id="skills">
+                <h2 className={styles.skillsHeading}>Some technologies I've worked with:</h2>
+                <div className={styles.skillsContainer}>
+                    {skillsElements}
+                </div>
+            </section>
+        </RevealOnScroll>
+        
     );
 }

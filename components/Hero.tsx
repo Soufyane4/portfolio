@@ -45,18 +45,23 @@ export default function Hero() {
       '+=0.3'
     )
 
-    .from(subtitleRef.current, {
-      opacity: 0,
-      y: 20,
-      duration: 0.6,
-      ease: 'power3.out',
-    }, '-=0.1')
-    .from(buttonRef.current, {
-      opacity: 0,
-      y: 15,
-      duration: 0.5,
-      ease: 'power3.out',
-    }, '-=0.3')
+    tl.fromTo(subtitleRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
+      '-=0.1'
+    )
+
+    .fromTo(buttonRef.current,
+      { opacity: 0, y: 15 },
+      { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' },
+      '-=0.3'
+    )
+
+    return () => {
+      tl.kill()
+      if (subtitleRef.current) gsap.set(subtitleRef.current, { opacity: 1, y: 0 })
+      if (buttonRef.current) gsap.set(buttonRef.current, { opacity: 1, y: 0 })
+    }
   }, [])
 
   return (
