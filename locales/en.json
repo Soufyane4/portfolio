@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "heading": "HI, I'M SOUFYANE",
+    "subtitle": "Full Stack Developer",
+    "button": "SEE MORE"
+  },
+  "about": {
+    "heading": "A Little Bit About Me",
+    "p1": "Hi there! My name is Soufyane, a Full Stack Web Developer from Rabat, Morocco.",
+    "p2_start": "I used to study physical and chemical sciences at ",
+    "p2_link": "Université Mohammed V (UM5)",
+    "p2_end": ", but I realized early on it wasn't the right direction for me. While finishing the academic year I started learning HTML and CSS on the side.",
+    "p3_start": "I enrolled at ",
+    "p3_link": "Centre Mixte de Formation Professionnelle Hay Nahda (CFHN)",
+    "p3_end": " vocational training school where I graduated as a Fullstack Development Technician, and during this period I built a solid foundation in Frontend and Backend technologies.",
+    "p4": "What I enjoy most about development is the process of building something and watching it work the way it's supposed to. It's genuinely satisfying. I'm always open to learning, and I try to learn from people with more experience, there's a lot I don't know yet and I'm fine with that.",
+    "p5": "Outside of coding I enjoy watching movies, and lately I've been getting into fishing."
+  },
+  "skills": {
+    "heading": "Some technologies I've worked with:"
+  },
+  "projects": {
+    "heading": "What I've Done",
+    "subheading": "more coming soon",
+    "viewProject": "VIEW PROJECT >"
+  },
+  "projectDetail": {
+    "purpose": "Project Purpose and Goal",
+    "spotlight": "Spotlight",
+    "lessonsLearned": "Lessons Learned",
+    "otherProjects": "Other Projects",
+    "viewProject": "VIEW PROJECT >",
+    "liveDemo": "Live Demo",
+    "github": "GitHub"
+  },
+  "contact": {
+  "heading": "Let's Build Something Together!",
+  "paragraph": "Feel free to get in touch whether you're looking for a developer, have a question, or just want to connect."
+}
+}

@@ -4,6 +4,7 @@ import Link from "next/link"
 import styles from "./Hero.module.css"
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import { useTranslations } from 'next-intl'
 
 export default function Hero() {
   const headingRef = useRef<HTMLHeadingElement>(null)
@@ -13,8 +14,10 @@ export default function Hero() {
   const closeBraceRef = useRef<HTMLSpanElement>(null)
   const textRef = useRef<HTMLSpanElement>(null)
 
+  const t = useTranslations('hero')
+  const fullText = t('heading')
+
   useEffect(() => {
-    const fullText = " HI, I'M SOUFYANE "
     const el = textRef.current
     if (!el) return
 
@@ -64,6 +67,7 @@ export default function Hero() {
     }
   }, [])
 
+
   return (
     <section className={styles.heroSection}>
         <h2 ref={headingRef} className={styles.name}>
@@ -71,8 +75,8 @@ export default function Hero() {
           <span ref={textRef} className={styles.heroText}></span>
           <span ref={closeBraceRef} className={styles.brace}>{`}`}</span>
         </h2>
-        <p ref={subtitleRef} className={styles.title}>Full Stack Developer</p>
-        <Link ref={buttonRef} href="/#about" className={styles.aboutLink}>SEE MORE</Link>
+        <p ref={subtitleRef} className={styles.title}>{t('subtitle')}</p>
+        <Link ref={buttonRef} href="/#about" className={styles.aboutLink}>{t('button')}</Link>
     </section>
   );
 }

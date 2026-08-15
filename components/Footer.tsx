@@ -1,22 +1,19 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
-import RevealOnScroll from "@/animations/RevealOnScroll";
+import RevealOnScroll from "@/animations/RevealOnScroll"
+import { getTranslations } from 'next-intl/server'
 
-export default function Footer() {
+export default async function Footer() {
   const currentYear = new Date().getFullYear();
+  const t = await getTranslations('contact')
 
   return (
     <RevealOnScroll>
       <section className={styles.footerSection} id="contact">
         <div className={styles.contactBar}>
           <div className={styles.emailContainer}>
-            <h2 className={styles.footerHeading}>
-              Let's Build Something Together!
-            </h2>
-            <p className={styles.contactText}>
-              Feel free to get in touch whether you're looking for a developer,
-              have a question, or just want to connect.
-            </p>
+            <h2 className={styles.footerHeading}>{t('heading')}</h2>
+            <p className={styles.contactText}>{t('paragraph')}</p>
             <a
               className={styles.email}
               href="mailto:soufianeoubamouh@gmail.com"

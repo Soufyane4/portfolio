@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "heading": "SALUT, MOI C'EST SOUFYANE",
+    "subtitle": "Développeur Full Stack",
+    "button": "EN SAVOIR PLUS"
+  },
+  "about": {
+    "heading": "Un Peu Sur Moi",
+    "p1": "Salut ! Je m'appelle Soufyane, développeur web Full Stack basé à Rabat, au Maroc.",
+    "p2_start": "J'ai d'abord étudié les sciences physiques et chimiques à l'",
+    "p2_link": "Université Mohammed V (UM5)",
+    "p2_end": ", mais j'ai réalisé assez tôt que ce n'était pas la bonne direction pour moi. En terminant mon année académique, j'ai commencé à apprendre HTML et CSS en parallèle.",
+    "p3_start": "Je me suis inscrit au ",
+    "p3_link": "Centre Mixte de Formation Professionnelle Hay Nahda (CFHN)",
+    "p3_end": ", où j'ai obtenu mon diplôme de Technicien Spécialisé en Développement Fullstack. Durant cette période, j'ai construit une base solide en technologies Frontend et Backend.",
+    "p4": "Ce que j'aime le plus dans le développement, c'est le processus de construire quelque chose et de le voir fonctionner comme prévu. C'est vraiment satisfaisant. Je suis toujours ouvert à apprendre et j'essaie de tirer des leçons des personnes plus expérimentées, il y a encore beaucoup que je ne sais pas et ça ne me dérange pas.",
+    "p5": "En dehors du code, j'aime regarder des films et je me suis récemment mis à la pêche."
+  },
+  "skills": {
+    "heading": "Quelques technologies avec lesquelles j'ai travaillé:"
+  },
+  "projects": {
+    "heading": "Ce Que J'ai Fait",
+    "subheading": "d'autres arrivent bientôt",
+    "viewProject": "VOIR LE PROJET >"
+  },
+  "projectDetail": {
+    "purpose": "Objectif du Projet",
+    "spotlight": "Spotlight",
+    "lessonsLearned": "Ce Que J'ai Appris",
+    "otherProjects": "Autres Projets",
+    "viewProject": "VOIR LE PROJET >",
+    "liveDemo": "Démo en Direct",
+    "github": "GitHub"
+  },
+  "contact": {
+  "heading": "Construisons Quelque Chose Ensemble !",
+  "paragraph": "N'hésitez pas à me contacter, que vous cherchiez un développeur, ayez une question, ou souhaitiez simplement échanger."
+}
+}

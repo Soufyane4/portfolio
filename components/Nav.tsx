@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react"
 import styles from "./Nav.module.css"
 import gsap from "gsap"
 import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,6 +16,8 @@ export default function Nav() {
   const logoRef = useRef<HTMLHeadingElement>(null);
 
   const pathname = usePathname()
+
+  const t = useTranslations('nav')
 
   useEffect(() => {
     setTimeout(() => {
@@ -106,50 +109,22 @@ export default function Nav() {
         <li
           className={`${styles.navLink} ${activeSection === "about" ? styles.activeLink : ""}`}
         >
-          <Link
-            href="/#about"
-            onClick={() => {
-              handleNavClick('about')
-            }}
-          >
-            About
-          </Link>
+          <Link href="/#about" onClick={() => handleNavClick('about')}>{t('about')}</Link>
         </li>
         <li
           className={`${styles.navLink} ${activeSection === "skills" ? styles.activeLink : ""}`}
         >
-          <Link
-            href="/#skills"
-            onClick={() => {
-              handleNavClick('skills')
-            }}
-          >
-            Skills
-          </Link>
+         <Link href="/#skills" onClick={() => handleNavClick('skills')}>{t('skills')}</Link>
         </li>
         <li
           className={`${styles.navLink} ${activeSection === "projects" ? styles.activeLink : ""}`}
         >
-          <Link
-            href="/#projects"
-            onClick={() => {
-              handleNavClick('projects')
-            }}
-          >
-            Projects
-          </Link>
+          <Link href="/#projects" onClick={() => handleNavClick('projects')}>{t('projects')}</Link>
         </li>
         <li
           className={`${styles.navLink} ${activeSection === "contact" ? styles.activeLink : ""}`}
         >
-          <Link
-            href="/#contact"
-            onClick={() => {
-              handleNavClick('contact')
-            }}
-          >
-            Contact
-          </Link>
+          <Link href="/#contact" onClick={() => handleNavClick('contact')}>{t('contact')}</Link>
         </li>
       </ul>
     </nav>
