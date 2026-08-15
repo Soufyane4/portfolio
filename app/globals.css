@@ -72,3 +72,23 @@ main {
 :focus:not(:focus-visible) {
     outline: none;
 }
+
+.cursor-glow {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .cursor-glow {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(72, 48, 230, 0.08) 0%, transparent 70%);
+    z-index: 999;
+  }
+}       

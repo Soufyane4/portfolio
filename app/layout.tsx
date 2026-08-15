@@ -3,6 +3,8 @@ import { Archivo_Black, Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav"
 import Footer from "@/components/Footer"
+import CursorGlow from '@/animations/CursorGlow'
+import ConsoleEasterEgg from '@/animations/ConsoleEasterEgg'
 
 
 const archivoBlack = Archivo_Black({
@@ -33,6 +35,8 @@ export default function RootLayout({
         <link rel="preload" href="/starry-nights.jpg" as="image" />
       </head>
       <body>
+        <CursorGlow />
+        <ConsoleEasterEgg />
         <Nav />
         {children}
         <Footer />
