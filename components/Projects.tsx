@@ -39,7 +39,7 @@ export default async function Projects() {
         <div className={styles.projectDetails}>
           <h3 className={styles.projectName}>{project.name}</h3>
           <p className={styles.projectDescription}>{project.description}</p>
-          <Link className={styles.projectLink} href={`projects/${project.id}`}>
+          <Link className={styles.projectLink} href={`${locale === 'fr' ? '/fr' : ''}/projects/${project.id}`}>
             {t('viewProject')}
           </Link>
         </div>

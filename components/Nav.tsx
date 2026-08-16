@@ -5,8 +5,9 @@ import { TbMenuDeep } from "react-icons/tb"
 import { useState, useEffect, useRef } from "react"
 import styles from "./Nav.module.css"
 import gsap from "gsap"
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,31 +15,67 @@ export default function Nav() {
 
   const isClicking = useRef(false);
   const logoRef = useRef<HTMLHeadingElement>(null);
+  const langBtnRef = useRef<HTMLButtonElement>(null)
 
   const pathname = usePathname()
 
   const t = useTranslations('nav')
 
-  useEffect(() => {
-    setTimeout(() => {
-      const sections = document.querySelectorAll("section[id]");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && !isClicking.current && pathname === '/') {
-              setActiveSection(entry.target.id);
-            }
-          });
-        },
-        { threshold: 0, rootMargin: "-45% 0px -45% 0px" },
-      );
+  const locale = useLocale()
+  const router = useRouter()
 
-      sections.forEach((section) => observer.observe(section));
-      return () => {
-        sections.forEach((section) => observer.unobserve(section));
-      };
-    }, 1000);
-  }, []);
+  function toggleLocale() {
+    gsap.fromTo(langBtnRef.current,
+        { color: '#4830e6' },
+        { color: '#E2E3E7', duration: 1.2, ease: 'power2.out' }
+      )
+
+    const nextLocale = locale === 'en' ? 'fr' : 'en'
+    if (nextLocale === 'en') {
+      const newPath = pathname.replace('/fr', '')
+      router.push(newPath || '/')
+    } else {
+      router.push(`/fr${pathname}`)
+    }
+  }
+
+  const pathnameRef = useRef(pathname)
+
+  useEffect(() => {
+    pathnameRef.current = pathname
+    if (pathname !== '/' && pathname !== '/fr') {
+      setActiveSection(null)
+    }
+  }, [pathname])
+
+  useEffect(() => {
+  const timeout = setTimeout(() => {
+    const handleScroll = () => {
+      if (pathnameRef.current !== '/' && pathnameRef.current !== '/fr') return
+      if (isClicking.current) return
+
+      const sections = document.querySelectorAll('section[id]')
+      let closest: string | null = null
+      let closestDistance = Infinity
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect()
+        const distance = Math.abs(rect.top - 100)
+        if (distance < closestDistance) {
+          closestDistance = distance
+          closest = section.id
+        }
+      })
+
+      if (closest) setActiveSection(closest)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, 1000)
+
+  return () => clearTimeout(timeout)
+}, [])
 
   useEffect(() => {
     const handleResize = () => {
@@ -79,17 +116,14 @@ export default function Nav() {
     toggleMenu()
     }
 
-    useEffect(() => {
-    if (pathname !== '/') {
-        setActiveSection(null)
-    }
-    }, [pathname])
 
   return (
     <nav className={styles.nav}>
-      <button className={styles.langBtn}>FR</button>
+      <button ref={langBtnRef} className={styles.langBtn} onClick={toggleLocale}>
+        {locale === 'en' ? 'FR' : 'EN'}
+      </button>
       <h1 ref={logoRef} className={styles.logo}>
-        <Link href="/">
+        <Link href={locale === 'fr' ? '/fr' : '/'}>
           {"< SOUF".split("").map((char, i) => (
             <span key={i}>{char === " " ? "\u00A0" : char}</span>
           ))}
@@ -109,22 +143,22 @@ export default function Nav() {
         <li
           className={`${styles.navLink} ${activeSection === "about" ? styles.activeLink : ""}`}
         >
-          <Link href="/#about" onClick={() => handleNavClick('about')}>{t('about')}</Link>
+          <Link href={`${locale === 'en' ? '' : '/fr'}/#about`} onClick={() => handleNavClick('about')}>{t('about')}</Link>
         </li>
         <li
           className={`${styles.navLink} ${activeSection === "skills" ? styles.activeLink : ""}`}
         >
-         <Link href="/#skills" onClick={() => handleNavClick('skills')}>{t('skills')}</Link>
+         <Link href={`${locale === 'en' ? '' : '/fr'}/#skills`} onClick={() => handleNavClick('skills')}>{t('skills')}</Link>
         </li>
         <li
           className={`${styles.navLink} ${activeSection === "projects" ? styles.activeLink : ""}`}
         >
-          <Link href="/#projects" onClick={() => handleNavClick('projects')}>{t('projects')}</Link>
+          <Link href={`${locale === 'en' ? '' : '/fr'}/#projects`} onClick={() => handleNavClick('projects')}>{t('projects')}</Link>
         </li>
         <li
           className={`${styles.navLink} ${activeSection === "contact" ? styles.activeLink : ""}`}
         >
-          <Link href="/#contact" onClick={() => handleNavClick('contact')}>{t('contact')}</Link>
+          <Link href={`${locale === 'en' ? '' : '/fr'}/#contact`} onClick={() => handleNavClick('contact')}>{t('contact')}</Link>
         </li>
       </ul>
     </nav>

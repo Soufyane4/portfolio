@@ -33,6 +33,7 @@
 .aboutLink {
     background-color: #4830E6;
     color: #fff;
+    border: 1px solid transparent;
     padding: 12px 32px;
     border-radius: 4px;
     transition: background-color 0.2s ease, color 0.2s ease;

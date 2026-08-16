@@ -36,7 +36,9 @@ export default async function ProjectPage({ params }: { params: { id: string } }
       <div className={styles.otherProjectDetails}>
         <h3 className={styles.otherProjectName}>{project.name}</h3>
         <p className={styles.otherProjectDescription}>{project.description}</p>
-        <Link className={styles.otherProjectLink} href={`/projects/${project.id}`}>{t('viewProject')}</Link>
+        <Link className={styles.otherProjectLink} href={`${locale === 'fr' ? '/fr' : ''}/projects/${project.id}`}>
+          {t('viewProject')}
+        </Link>
       </div>
     </div>
   ))

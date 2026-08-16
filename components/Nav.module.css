@@ -81,6 +81,7 @@
     }
 
     .langBtn {
+        display: inline-block;
         justify-self: end;
         order: 3;
     }
