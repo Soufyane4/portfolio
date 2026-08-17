@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
-import { Archivo_Black, Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from "next"
+import { Archivo_Black, Inter } from "next/font/google"
+import "./globals.css"
 
 
 const archivoBlack = Archivo_Black({
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" className={`${archivoBlack.variable} ${inter.variable}`}>

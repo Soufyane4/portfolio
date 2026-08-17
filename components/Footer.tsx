@@ -1,10 +1,10 @@
-import Link from "next/link";
-import styles from "./Footer.module.css";
+import Link from "next/link"
+import styles from "./Footer.module.css"
 import RevealOnScroll from "@/animations/RevealOnScroll"
 import { getTranslations } from 'next-intl/server'
 
 export default async function Footer() {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
   const t = await getTranslations('contact')
 
   return (
@@ -50,5 +50,5 @@ export default async function Footer() {
         </p>
       </section>
     </RevealOnScroll>
-  );
+  )
 }

@@ -10,11 +10,11 @@ import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
 
 export default function Nav() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState<string | null>(null)
 
-  const isClicking = useRef(false);
-  const logoRef = useRef<HTMLHeadingElement>(null);
+  const isClicking = useRef(false)
+  const logoRef = useRef<HTMLHeadingElement>(null)
   const langBtnRef = useRef<HTMLButtonElement>(null)
 
   const pathname = usePathname()
@@ -79,25 +79,25 @@ export default function Nav() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) setMenuOpen(false);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+      if (window.innerWidth >= 768) setMenuOpen(false)
+    }
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
   function toggleMenu() {
     if (window.innerWidth < 768) {
-      setMenuOpen((prev) => !prev);
+      setMenuOpen((prev) => !prev)
     }
   }
 
   useEffect(() => {
-    if (!logoRef.current) return;
-    const spans = logoRef.current.querySelectorAll("span");
+    if (!logoRef.current) return
+    const spans = logoRef.current.querySelectorAll("span")
 
-    const tl = gsap.timeline({ delay: 3.8 });
+    const tl = gsap.timeline({ delay: 3.8 })
 
-    const colors = ["#4830e6", "inherit"];
+    const colors = ["#4830e6", "inherit"]
 
     colors.forEach((color) => {
       tl.to(spans, {
@@ -105,9 +105,9 @@ export default function Nav() {
         duration: 0.4,
         stagger: { each: 0.03 },
         ease: "power2.inOut",
-      });
-    });
-  }, []);
+      })
+    })
+  }, [])
 
   function handleNavClick(targetId: string) {
     isClicking.current = true
@@ -162,5 +162,5 @@ export default function Nav() {
         </li>
       </ul>
     </nav>
-  );
+  )
 }

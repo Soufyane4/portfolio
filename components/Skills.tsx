@@ -1,7 +1,7 @@
-import styles from "./Skills.module.css";
-import skills from "@/data/skills.json";
-import Image from "next/image";
-import RevealOnScroll from "@/animations/RevealOnScroll";
+import styles from "./Skills.module.css"
+import skills from "@/data/skills.json"
+import Image from "next/image"
+import RevealOnScroll from "@/animations/RevealOnScroll"
 import { getTranslations } from 'next-intl/server'
 
 export default async function Skills() {
@@ -19,8 +19,8 @@ export default async function Skills() {
         />
         <p className={styles.skillName}>{skill.name}</p>
       </div>
-    );
-  });
+    )
+  })
   return (
     <RevealOnScroll>
       <section className={styles.skillsSection} id="skills">
@@ -28,5 +28,5 @@ export default async function Skills() {
         <div className={styles.skillsContainer}>{skillsElements}</div>
       </section>
     </RevealOnScroll>
-  );
+  )
 }

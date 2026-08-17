@@ -1,8 +1,8 @@
-import styles from "./Projects.module.css";
-import projects from "@/data/en/projects.json";
-import Image from "next/image";
-import Link from "next/link";
-import RevealOnScroll from "@/animations/RevealOnScroll";
+import styles from "./Projects.module.css"
+import projects from "@/data/en/projects.json"
+import Image from "next/image"
+import Link from "next/link"
+import RevealOnScroll from "@/animations/RevealOnScroll"
 import { getTranslations, getLocale } from 'next-intl/server'
 
 type Project = {

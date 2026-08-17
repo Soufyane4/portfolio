@@ -1,6 +1,6 @@
-import Link from "next/link";
-import styles from "./About.module.css";
-import RevealOnScroll from "@/animations/RevealOnScroll";
+import Link from "next/link"
+import styles from "./About.module.css"
+import RevealOnScroll from "@/animations/RevealOnScroll"
 import { getTranslations } from 'next-intl/server'
 
 export default async function About() {
@@ -30,5 +30,5 @@ export default async function About() {
         </div>
       </section>
     </RevealOnScroll>
-  );
+  )
 }
