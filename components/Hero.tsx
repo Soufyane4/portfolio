@@ -17,6 +17,8 @@ export default function Hero() {
   const t = useTranslations('hero')
   const fullText = t('heading')
 
+  console.log(JSON.stringify(fullText))
+
   useEffect(() => {
     const el = textRef.current
     if (!el) return
@@ -68,10 +70,12 @@ export default function Hero() {
   return (
     <section className={styles.heroSection}>
         <h2 ref={headingRef} className={styles.name}>
-          <span ref={openBraceRef} className={styles.brace}>{`{`}</span>
-          <span ref={textRef} className={styles.heroText}></span>
-          <span ref={closeBraceRef} className={styles.brace}>{`}`}</span>
-        </h2>
+  <span className={styles.nameStart}>
+    <span ref={openBraceRef} className={styles.brace}>{`{`}</span>
+    <span ref={textRef} className={styles.heroText}></span>
+    <span ref={closeBraceRef} className={styles.brace}>{`}`}</span>
+  </span>
+</h2>
         <p ref={subtitleRef} className={styles.title}>{t('subtitle')}</p>
         <Link ref={buttonRef} href="/#about" className={styles.aboutLink}>{t('button')}</Link>
     </section>

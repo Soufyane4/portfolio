@@ -15,13 +15,23 @@
 .name {
     font-size: 2.25rem;
     text-align: center;
-    letter-spacing: -2%;
     margin: 0;
 }
 
+.nameStart {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: pre-wrap;
+}
+
 .brace {
-  pointer-events: none;
-  color: var(--accent);
+    pointer-events: none;
+    color: var(--accent);
+}
+
+.heroText {
+    white-space: pre-wrap;
 }
 
 .title {
@@ -46,10 +56,7 @@
 }
 
 .title,
-.aboutLink {
-    opacity: 0;
-}
-
+.aboutLink,
 .brace {
-  opacity: 0;
+    opacity: 0;
 }

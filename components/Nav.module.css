@@ -20,6 +20,8 @@
 .langBtn {
     font-size: 1rem;
     font-weight: 700;
+    width: 44px;
+    text-align: left;
 }
 
 .menutoggle,

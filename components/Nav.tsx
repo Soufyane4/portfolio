@@ -133,11 +133,11 @@ export default function Nav() {
       </button>
       <h1 ref={logoRef} className={styles.logo}>
         <Link href={locale === 'fr' ? '/fr' : '/'}>
-          {"< SOUF".split("").map((char, i) => (
+          {"< SOUF ".split("").map((char, i) => (
             <span key={i}>{char === " " ? "\u00A0" : char}</span>
           ))}
           <br />
-          {"YANE />".split("").map((char, i) => (
+          {"YANE / >".split("").map((char, i) => (
             <span key={i + 10}>{char === " " ? "\u00A0" : char}</span>
           ))}
         </Link>
