@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${archivoBlack.variable} ${inter.variable}`}>
       <head>
-        <link rel="preload" href="/starry-nights.jpg" as="image" />
+        <link rel="preload" href="/starry-nights.webp" as="image" />
       </head>
       <body>
         {children}
