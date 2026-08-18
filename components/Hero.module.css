@@ -45,3 +45,11 @@
     opacity: 1;
 }
 
+.title,
+.aboutLink {
+    opacity: 0;
+}
+
+.brace {
+  opacity: 0;
+}

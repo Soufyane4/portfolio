@@ -25,35 +25,32 @@ export default function Hero() {
 
     const tl = gsap.timeline()
 
-    tl.to({}, {
+    tl.fromTo(
+      [openBraceRef.current, closeBraceRef.current],
+      { opacity: 0 },
+      { opacity: 1, duration: 0.4, ease: 'power2.out' }
+    )
+
+    .to({}, {
       duration: fullText.length * 0.13,
       ease: 'none',
       onUpdate() {
         const charIndex = Math.floor(this.progress() * fullText.length)
         el.textContent = fullText.slice(0, charIndex)
       },
-    })
+    }, '-=0.1')
 
     .to(
       [openBraceRef.current, closeBraceRef.current],
-      {
-        opacity: 0,
-        duration: 0.3,
-        ease: 'power1.out',
-        onComplete: () => {
-          if (openBraceRef.current) openBraceRef.current.style.display = 'none'
-          if (closeBraceRef.current) closeBraceRef.current.style.display = 'none'
-        },
-      },
-      '+=0.3'
+      { opacity: 0, duration: 0.4, ease: 'power2.in' },
+      '+=0.2'
     )
 
-    tl.fromTo(subtitleRef.current,
+    .fromTo(subtitleRef.current,
       { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' },
-      '-=0.1'
+      { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }
     )
-
+  
     .fromTo(buttonRef.current,
       { opacity: 0, y: 15 },
       { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' },

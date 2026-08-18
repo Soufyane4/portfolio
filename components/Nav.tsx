@@ -67,6 +67,15 @@ export default function Nav() {
         }
       })
 
+      const firstSection = sections[0]
+      if (firstSection) {
+        const firstRect = firstSection.getBoundingClientRect()
+        if (firstRect.top > window.innerHeight / 2) {
+          setActiveSection(null)
+          return
+        }
+      }
+
       if (closest) setActiveSection(closest)
     }
 
