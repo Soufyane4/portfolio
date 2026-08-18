@@ -8,7 +8,7 @@ Welcome to my first web development portfolio, built with Next.js to showcase my
 
 ## Screenshot
 
-![Portfolio Screenshot](screenshots/portfolio-home.png)
+![Portfolio Screenshot](https://raw.githubusercontent.com/Soufyane4/portfolio/master/screenshots/portfolio-home.png)
 
 ## Tech Stack
 
