@@ -31,10 +31,11 @@ export default function RevealOnScroll({ children }: { children: React.ReactNode
     }
   )
 
-  // give layout time to settle before ScrollTrigger calculates positions
   const timeout = setTimeout(() => {
     ScrollTrigger.refresh()
-  }, 100)
+  }, 500)
+
+  window.addEventListener('load', () => ScrollTrigger.refresh())
 
   return () => {
     clearTimeout(timeout)
