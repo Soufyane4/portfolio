@@ -14,7 +14,7 @@ export default function RevealOnScroll({ children }: { children: React.ReactNode
   const el = ref.current
   if (!el) return
 
-  gsap.set(el, { opacity: 0, y: 40 })
+  gsap.set(el, { opacity: 0, y: 40, pointerEvents: 'none' })
 
   const anim = gsap.fromTo(el,
     { opacity: 0, y: 40 },
@@ -23,6 +23,7 @@ export default function RevealOnScroll({ children }: { children: React.ReactNode
       y: 0,
       duration: 0.8,
       ease: 'power3.out',
+      onComplete: () => gsap.set(el, { pointerEvents: 'auto' }),
       scrollTrigger: {
         trigger: el,
         start: 'top 80%',
@@ -30,13 +31,19 @@ export default function RevealOnScroll({ children }: { children: React.ReactNode
     }
   )
 
+  // give layout time to settle before ScrollTrigger calculates positions
+  const timeout = setTimeout(() => {
+    ScrollTrigger.refresh()
+  }, 100)
+
   return () => {
+    clearTimeout(timeout)
     anim.kill()
-    gsap.set(el, { opacity: 1, y: 0 })
+    gsap.set(el, { opacity: 1, y: 0, pointerEvents: 'auto' })
     ScrollTrigger.getAll()
-        .filter(t => t.trigger === el)
-        .forEach(t => t.kill())
-    }
+      .filter(t => t.trigger === el)
+      .forEach(t => t.kill())
+  }
 }, [])
 
   return <div ref={ref}>{children}</div>
