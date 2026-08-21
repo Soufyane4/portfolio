@@ -4,7 +4,10 @@ import Link from "next/link"
 import styles from "./Hero.module.css"
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
+
+
+
 
 export default function Hero() {
   const headingRef = useRef<HTMLHeadingElement>(null)
@@ -13,6 +16,8 @@ export default function Hero() {
   const openBraceRef = useRef<HTMLSpanElement>(null)
   const closeBraceRef = useRef<HTMLSpanElement>(null)
   const textRef = useRef<HTMLSpanElement>(null)
+
+  const locale = useLocale()
 
   const t = useTranslations('hero')
   const fullText = t('heading')
@@ -77,7 +82,7 @@ export default function Hero() {
   </span>
 </h2>
         <p ref={subtitleRef} className={styles.title}>{t('subtitle')}</p>
-        <Link ref={buttonRef} href="/#about" className={styles.aboutLink}>{t('button')}</Link>
+        <Link ref={buttonRef} href={`${locale === 'en' ? '' : '/fr'}/#about`} className={styles.aboutLink}>{t('button')}</Link>
     </section>
   );
 }
